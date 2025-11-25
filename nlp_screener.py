@@ -20,138 +20,164 @@ MODEL = "cardiffnlp/twitter-roberta-base-sentiment"
 # =============================================================================
 DEPRESSION_KEYWORDS = {
     "severe": [
+        # --- Core suicidality ---
         "suicid", "suicide", "kill myself", "end it all", "want to die",
-        "no reason to live", "no reason to live anymore",
-        "better off dead", "hopeless", "worthless",
-        "nothing matters", "end my life", "life is pointless",
-        "life has no meaning", "wish i was dead", "wish i wasn't here",
-        "i am a burden", "everyone will be better without me",
-        "can't continue", "tired of living", "giving up on life",
-        "i don't deserve to live", "wish i could disappear",
-        "lost the will to live", "ending everything", "emotional death",
-        "no purpose to life", "i want everything to stop",
-        "life is unbearable", "can't live like this",
-        "no way out", "trapped in pain", "nothing will ever get better",
-        "over it all", "done with everything"
+        "better off dead", "wish i was dead", "wish i wasn't here",
+        "no reason to live", "life is pointless", "life has no meaning",
+        "i hope i don’t wake up", "i want everything to stop",
+        "i'm done with life", "everyone would be better without me",
+        "lost the will to live", "final goodbye", "ending everything",
+        "can’t continue anymore", "can’t live like this",
+        "my life is over", "i want to disappear", "death would be easier",
+        "escape life", "nothing will ever improve",
+        "my existence is pointless", "total despair", "i don’t deserve to live",
+
+        # --- Catastrophic hopelessness ---
+        "utterly hopeless", "completely hopeless", "permanent despair",
+        "no future", "hopeless future", "future is dark",
+        "never getting better", "beyond saving", "helpless forever",
+
+        # --- Severe depressive cognition ---
+        "total emptiness", "emotionally dead", "mentally collapsing",
+        "can’t feel anything", "absolute numbness", "mentally destroyed",
+
+        # --- Severe anhedonia ---
+        "i feel nothing at all", "no pleasure in anything",
+        "zero motivation", "nothing matters anymore",
+
+        # --- Functional collapse ---
+        "can’t function at all", "unable to get out of bed",
+        "completely shut down", "mentally broken", "severe breakdown"
     ],
+
     "high": [
-        "depressed", "can't go on", "giving up", "no hope",
-        "empty inside", "numb", "don't care anymore", "pointless",
-        "useless", "hate myself", "broken inside", "emotionally drained",
-        "mentally exhausted", "dead inside", "can't feel anything",
-        "no joy in life", "nothing excites me", "no motivation",
-        "self-loathing", "self hate", "self-hate", "meaningless",
-        "heartbroken", "deep sadness", "overly negative",
-        "hopeless about future", "lost meaning",
-        "so tired of everything", "emotionally numb",
-        "lost myself", "feel broken", "permanently sad",
-        "empty all the time", "mentally drained", "constant sadness"
+        # --- Intense negative emotions ---
+        "deep sadness", "emotionally drained", "dead inside",
+        "mentally exhausted", "emotionally numb", "self-hate",
+        "self loathing", "hate myself", "broken inside", "constant sadness",
+        "continuous despair", "emotionally empty",
+
+        # --- Major anhedonia ---
+        "nothing excites me", "no motivation at all",
+        "no joy", "lost all interest", "can't feel joy",
+
+        # --- Cognitive impairment ---
+        "constant brain fog", "can't think straight", "slow thinking",
+        "mentally stuck", "mental heaviness", "dark thoughts",
+
+        # --- Behavioral signs ---
+        "barely functioning", "stopped caring", "can’t manage life",
+        "barely surviving", "isolating completely"
     ],
+
     "moderate": [
-        "sad", "down", "low mood", "crying", "unhappy", "miserable",
-        "can't sleep", "insomnia", "exhausted", "no energy",
-        "tired all the time", "fatigue", "low motivation",
-        "can't focus", "brain fog", "mental fog", "feeling lonely",
-        "isolated", "withdrawn", "lost interest", "don't enjoy",
-        "unhappy with life", "low appetite", "overeating",
-        "slow thinking", "feeling dull", "feeling empty",
-        "feeling blue", "down most days", "can't enjoy hobbies",
-        "no interest in friends", "socially withdrawn",
-        "crying at night", "waking up tired",
-        "dragging myself through the day"
+        # --- Classic depression symptoms ---
+        "sad", "down", "low mood", "crying", "miserable", "unhappy",
+        "insomnia", "hypersomnia", "fatigue", "low energy", "tired all the time",
+        "lost interest", "don’t enjoy things", "feeling lonely",
+        "isolated", "withdrawn", "no appetite", "overeating",
+        "brain fog", "feeling blue", "dragging myself", "slowed down",
+        "unmotivated", "emotional fatigue", "low confidence",
+        "feeling hopeless", "feeling worthless", "empty inside"
     ],
+
     "mild": [
-        "unmotivated", "lonely", "isolated", "withdrawn", "lost interest",
-        "don't enjoy", "flat", "blah", "feeling off", "emotionally tired",
-        "low enthusiasm", "low energy", "slightly down", "bored of life",
-        "not feeling myself", "mild sadness", "low mood lately",
-        "not in the mood for anything", "small sadness", "feeling low",
-        "a bit down", "slightly low"
+        # --- Subclinical symptoms ---
+        "a bit down", "slightly sad", "mild sadness",
+        "feeling off", "blah", "flat", "low enthusiasm",
+        "not feeling myself", "emotionally tired",
+        "feeling low", "slightly empty", "bored with life",
+        "low mood lately"
     ]
 }
 
 ANXIETY_KEYWORDS = {
     "severe": [
-        "panic attack", "can't breathe", "heart racing", "going to die",
-        "losing control", "terrified", "paralyzed with fear",
-        "hyperventilating", "breathing fast", "shaking uncontrollably",
-        "complete panic", "intense fear", "overwhelming dread",
-        "mind spiraling", "freeze response", "extreme panic",
-        "feeling unsafe", "terror", "sense of impending doom"
+        "panic attack", "can't breathe", "hyperventilating",
+        "heart racing fast", "losing control", "paralyzed with fear",
+        "intense terror", "sense of impending doom",
+        "shaking uncontrollably", "complete panic",
+        "can't calm down at all", "severe dread", "freeze response",
+        "catastrophic fear", "irrational terror", "mental paralysis"
     ],
+
     "high": [
-        "anxious", "panic", "anxiety", "terrified", "scared", "fear",
-        "racing thoughts", "can't calm down", "overwhelming",
-        "mind won't stop", "constant worry", "worried all the time",
-        "catastrophizing", "fearful", "on high alert",
-        "always afraid", "panic feeling", "can't relax",
-        "high anxiety", "always on edge"
+        "panic", "very anxious", "terrified", "scared", "fearful",
+        "racing thoughts", "mind won't stop", "constant worry",
+        "catastrophizing", "always afraid", "high anxiety",
+        "on high alert", "overwhelming worry", "fear spiraling",
+        "obsessing", "ruminating", "intrusive thoughts"
     ],
+
     "moderate": [
-        "worried", "nervous", "on edge", "restless", "tense", "uneasy",
-        "can't relax", "worried sick", "butterflies", "jittery",
-        "tight chest", "shaky", "sweaty palms", "pressure in chest",
-        "overthinking", "mind racing", "stomach tight", "tense muscles",
-        "nervous energy", "easily startled"
+        "worried", "nervous", "restless", "uneasy", "tense",
+        "jittery", "shaky", "sweaty palms", "tight chest",
+        "mind racing", "pressure in chest", "overthinking",
+        "tense muscles", "easily startled", "fear building up",
+        "feeling overwhelmed", "mild dread"
     ],
+
     "mild": [
-        "concerned", "apprehensive", "uncertain", "uncomfortable",
-        "a bit worried", "slightly nervous", "mild anxiety",
-        "small fear", "minor worry", "slight tension", "light worry",
-        "a little anxious"
+        "a bit worried", "slightly anxious", "mild anxiety",
+        "light worry", "uncertain", "apprehensive",
+        "slight nervousness", "small fear", "uneasy feeling"
     ]
 }
 
 STRESS_KEYWORDS = {
     "severe": [
-        "breaking point", "can't cope", "too much", "overwhelmed",
-        "breaking down", "can't handle", "falling apart",
-        "mentally collapsing", "total overload", "mental breakdown",
-        "unmanageable stress", "emotionally overwhelmed",
-        "shutting down", "too much pressure", "maxed out",
-        "brain shutting down", "completely overwhelmed",
-        "can't function anymore", "overwhelmed to the point of tears",
-        "completely burned out", "emotionally collapsing"
+        "breaking point", "can't cope", "overwhelmed completely",
+        "falling apart", "total overload", "complete burnout",
+        "emotionally collapsing", "maxed out", "can't function anymore",
+        "total mental breakdown", "shutdown mode",
+        "too much to handle", "losing control from stress",
+        "unmanageable stress", "overwhelmed to tears",
+        "completely drowned in stress"
     ],
+
     "high": [
         "stressed out", "burned out", "pressure", "overloaded",
-        "can't keep up", "drowning", "crushed",
-        "too many responsibilities", "high tension",
-        "too demanding", "constant pressure", "non-stop stress",
-        "chronic stress", "high stress", "always stressed",
-        "constant workload", "piled up work"
+        "too much work", "constant pressure", "chronic stress",
+        "high stress", "always stressed", "non-stop stress",
+        "constant workload", "piled up work", "crushed by stress",
+        "too demanding", "constant tension", "emotional overload"
     ],
+
     "moderate": [
-        "stressed", "hectic", "busy", "demanding", "tiring",
-        "struggling", "difficult", "challenging", "fatigued",
-        "overworked", "emotionally tired", "mentally tired",
-        "ongoing stress", "brain tired", "chaotic day",
-        "stressful week", "under pressure", "draining day"
+        "stressed", "hectic", "tiring", "challenging", "difficult",
+        "fatigued", "overworked", "draining day", "stressful week",
+        "mentally tired", "emotionally tired", "brain tired",
+        "demanding day", "busy and stressed"
     ],
+
     "mild": [
-        "a lot going on", "bit much", "stretched thin", "juggling",
-        "slightly stressed", "some stress", "short-term stress",
-        "handling a lot", "minor pressure", "a little stressed",
-        "small amount of stress"
+        "a lot going on", "slightly stressed", "some stress",
+        "minor pressure", "a little stressed", "short-term stress",
+        "handling a lot", "bit overwhelmed"
     ]
 }
 
+
 # Suicidality patterns – used to hard-flag high-risk text
 SUICIDAL_PATTERNS = [
-    "suicid", "suicide", "kill myself", "end it all", "want to die",
-    "no reason to live", "no reason to live anymore",
-    "life is pointless", "life has no meaning",
-    "better off dead", "end my life",
-    "wish i was dead", "wish i wasn't here",
-    "i am a burden", "everyone will be better without me",
-    "tired of living", "giving up on life",
-    "i dont deserve to live", "i don't deserve to live",
-    "wish i could disappear", "lost the will to live",
-    "emotional death", "life is unbearable", "cant live like this",
-    "can't live like this", "no way out", "trapped in pain",
-    "nothing will ever get better", "over it all", "done with everything",
-    "i want everything to stop"
+    # Direct
+    "suicide", "kill myself", "end my life", "i want to die",
+    "better off dead", "wish i was dead", "wish i wasn't here",
+
+    # Indirect
+    "no reason to live", "i can't do this anymore", "done with life",
+    "tired of living", "giving up on life", "life isn't worth it",
+    "everyone would be better without me",
+
+    # Coded suicide language
+    "ready to go", "won't be here tomorrow", "final goodbye",
+    "i hope i don’t wake up", "i'm finished", "i'm done here",
+
+    # Existential despair
+    "my existence is pointless", "nothing will ever improve",
+    "utter hopelessness", "permanent despair"
 ]
+
 
 # Positive / protective indicators
 POSITIVE_INDICATORS = [
@@ -216,6 +242,10 @@ def _analyze_keywords(text: str):
     # Remove punctuation for matching
     text_clean = re.sub(r"[^\w\s]", " ", text_lower)
     text_clean = re.sub(r"\s+", " ", text_clean).strip()
+
+    # Normalize common suicide phrase typos/splits
+    # e.g., "kill my self" -> "kill myself"
+    text_clean = text_clean.replace("my self", "myself")
 
     # Helper: count matches of a phrase with simple negation handling
     def count_matches(clean_text: str, phrase: str) -> int:
@@ -335,7 +365,9 @@ def _analyze_keywords(text: str):
         "anxiety_risk": round(anxiety_score, 2),
         "stress_risk": round(stress_score, 2),
         "combined_risk": round(combined_risk, 2),
-        "suicidal_flag": suicidal_flag
+        "suicidal_flag": suicidal_flag,
+        "positive_count": int(positive_count),
+        "token_count": len(text_clean.split())
     }
 
 # =============================================================================
@@ -426,32 +458,38 @@ def analyze_text(text: str, allow_local_files_only: bool = False):
             "depression_risk": 0.0,
             "anxiety_risk": 0.0,
             "stress_risk": 0.0,
-            "combined_risk": 0.0
+            "combined_risk": 0.0,
+            "suicidal_flag": False,
+            "analysis_confidence": 0.3,
+            "primary_concern": "No Strong Signal"
         }
 
     # 1) Keyword analysis (always)
     keyword_results = _analyze_keywords(text)
     suicidal_flag = keyword_results.get("suicidal_flag", False)
+    token_count = keyword_results.get("token_count", len(text.split()))
+    keyword_combined = keyword_results["combined_risk"]
 
-    # Default: if transformer fails, use keyword-only
+    # Default final_results = keyword-only
     final_results = keyword_results
 
     # 2) Transformer-based analysis
+    transformer_results = None
     try:
         tokenizer, model = load_model(local_files_only=allow_local_files_only)
         transformer_results = _transformer_analysis(text, tokenizer, model)
 
         # Weighting: trust keywords more, especially in high-risk cases
         alpha = 0.7  # keyword weight
-        if suicidal_flag or keyword_results["combined_risk"] >= 0.75:
+        if suicidal_flag or keyword_combined >= 0.75:
             alpha = 0.9  # heavily trust keywords
 
         dep = keyword_results["depression_risk"] * alpha + transformer_results["depression_risk"] * (1 - alpha)
         anx = keyword_results["anxiety_risk"] * alpha + transformer_results["anxiety_risk"] * (1 - alpha)
-        st =  keyword_results["stress_risk"] * alpha + transformer_results["stress_risk"] * (1 - alpha)
+        st_risk = keyword_results["stress_risk"] * alpha + transformer_results["stress_risk"] * (1 - alpha)
 
-        mix_combined = keyword_results["combined_risk"] * alpha + transformer_results["combined_risk"] * (1 - alpha)
-        combined = max(mix_combined, keyword_results["combined_risk"])
+        mix_combined = keyword_combined * alpha + transformer_results["combined_risk"] * (1 - alpha)
+        combined = max(mix_combined, keyword_combined)
 
         if suicidal_flag:
             dep = max(dep, 0.9)
@@ -461,13 +499,51 @@ def analyze_text(text: str, allow_local_files_only: bool = False):
             "overall_sentiment": keyword_results["overall_sentiment"],
             "depression_risk": round(dep, 2),
             "anxiety_risk": round(anx, 2),
-            "stress_risk": round(st, 2),
-            "combined_risk": round(combined, 2)
+            "stress_risk": round(st_risk, 2),
+            "combined_risk": round(combined, 2),
+            "suicidal_flag": suicidal_flag
         }
 
     except Exception as e:
         logger.info(f"[NLP] Transformer unavailable, using keyword analysis only: {e}")
-        final_results = keyword_results
+        final_results = {
+            "overall_sentiment": keyword_results["overall_sentiment"],
+            "depression_risk": keyword_results["depression_risk"],
+            "anxiety_risk": keyword_results["anxiety_risk"],
+            "stress_risk": keyword_results["stress_risk"],
+            "combined_risk": keyword_results["combined_risk"],
+            "suicidal_flag": suicidal_flag
+        }
+
+    # 3) Primary concern label
+    dep = final_results["depression_risk"]
+    anx = final_results["anxiety_risk"]
+    st_risk = final_results["stress_risk"]
+
+    scores = {"Depression": dep, "Anxiety": anx, "Stress": st_risk}
+    main_label = max(scores, key=scores.get)
+    max_score = scores[main_label]
+
+    # Decide if it's clearly focused or mixed/none
+    sorted_scores = sorted(scores.values(), reverse=True)
+    if max_score < 0.20:
+        primary_concern = "No Strong Signal"
+    elif len(sorted_scores) >= 2 and (sorted_scores[0] - sorted_scores[1]) < 0.10:
+        primary_concern = "Mixed (Depression / Anxiety / Stress)"
+    else:
+        primary_concern = main_label
+
+    # 4) Analysis confidence (0–1)
+    #    Based on text length + combined risk + suicidality override
+    length_factor = min(token_count / 35.0, 1.0)  # saturates around ~35 tokens
+    risk_factor = float(final_results["combined_risk"])
+    conf = 0.25 + 0.45 * length_factor + 0.30 * risk_factor
+    if suicidal_flag:
+        conf = max(conf, 0.85)
+    conf = max(0.0, min(1.0, conf))
+
+    final_results["primary_concern"] = primary_concern
+    final_results["analysis_confidence"] = round(conf, 2)
 
     return final_results
 
@@ -482,7 +558,8 @@ if __name__ == "__main__":
         "Just having a normal day, nothing special.",
         "I'm a bit worried about the presentation tomorrow but I'll be fine.",
         "I can't breathe, having panic attacks constantly, terrified all the time.",
-        "Feeling a bit down and tired lately, lost interest in things I used to enjoy."
+        "Feeling a bit down and tired lately, lost interest in things I used to enjoy.",
+        "today i not feel good i think i will kill my self"
     ]
 
     print("=" * 70)
@@ -499,4 +576,7 @@ if __name__ == "__main__":
             f"Stress: {result['stress_risk']:.0%}"
         )
         print(f"Combined Risk: {result['combined_risk']:.0%}")
+        print(f"Primary Concern: {result.get('primary_concern')}")
+        print(f"Confidence: {result.get('analysis_confidence')}")
+        print(f"Suicidal Flag: {result.get('suicidal_flag')}")
         print("-" * 70)
